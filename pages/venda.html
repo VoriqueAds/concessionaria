@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venda - AutoClass</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">AutoClass</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="../pages/compre.html">Compre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Venda</a></li>
+        <li class="nav-item"><a class="nav-link" href="../pages/login.html">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="../pages/admin-funcionario.html">Ajuda</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<section class="container my-5">
+  <h1 class="mb-4 text-center">Anuncie Seu Carro</h1>
+  <form>
+    <div class="mb-3">
+      <label for="nome" class="form-label">Seu Nome</label>
+      <input type="text" class="form-control" id="nome" required>
+    </div>
+    <div class="mb-3">
+      <label for="marca" class="form-label">Marca</label>
+      <input type="text" class="form-control" id="marca" required>
+    </div>
+    <div class="mb-3">
+      <label for="modelo" class="form-label">Modelo</label>
+      <input type="text" class="form-control" id="modelo" required>
+    </div>
+    <div class="mb-3">
+      <label for="preco" class="form-label">Preço (R$)</label>
+      <input type="number" class="form-control" id="preco" required>
+    </div>
+    <div class="mb-3">
+      <label for="foto" class="form-label">Foto do Carro</label>
+      <input type="file" class="form-control" id="foto">
+    </div>
+    <button type="submit" class="btn btn-success">Anunciar</button>
+  </form>
+</section>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  © 2025 AutoClass - Todos os direitos reservados
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/api.js"></script>
+<script>
+  function buscarFipeVenda() {
+    const marca = document.getElementById("marca-venda").value.toLowerCase();
+    const modelo = document.getElementById("modelo-venda").value.toLowerCase();
+    const ano = document.getElementById("ano-venda").value;
+    buscarPrecoFipe(marca, modelo, ano, "fipe-resultado");
+  }
+</script>
+</body>
+</html>
